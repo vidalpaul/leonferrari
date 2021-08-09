@@ -6,15 +6,13 @@ import Year from '../components/Year';
 
 export default function Home() {
   const ages = [
-    '1919',
     '1920',
-    '1930',
-    '1940',
-    '1950',
-    '1960',
-    '1970',
-    '1980',
-    '1988',
+    'early works',
+    'language and writing',
+    'abstention',
+    'heliografías',
+    'body',
+    'christian plastic works',
   ];
   return (
     <div className={styles.container}>
@@ -28,35 +26,15 @@ export default function Home() {
         <div className={styles.landing}>
           <div className={styles.bgImg}></div>
           <div className={styles.timeNav}>
-            <div className={styles.navlink}>
-              <a href='#1919'>1919</a>
-            </div>
-            <div className={styles.navlink}>
-              <a href='#20s'>20s</a>
-            </div>
-            <div className={styles.navlink}>
-              <a href='#30s'>30s</a>
-            </div>
-            <div className={styles.navlink}>
-              <a href='#40s'>40s</a>
-            </div>
-            <div className={styles.navlink}>
-              <a href='#50s'>50s</a>
-            </div>
-            <div className={styles.navlink}>
-              <a href='#60s'>60s</a>
-            </div>
-            <div className={styles.navlink}>
-              <a href='#70s'>70s</a>
-            </div>
-            <div className={styles.navlink}>
-              <a href='#80s'>80s</a>
-            </div>
-            <div className={styles.navlink}>
-              <a href='#1988'>1988</a>
-            </div>
+            {ages.map((age, i) => {
+              return (
+                <div className={styles.navlink} key={i}>
+                  <a href={`#${age}`}>{age}</a>
+                </div>
+              );
+            })}
           </div>
-          <h1 className={styles.title}>león ferrari · vie et œuvre</h1>
+          <h1 className={styles.title}>león ferrari · life and work</h1>
         </div>
 
         {ages.map((age, i) => {
